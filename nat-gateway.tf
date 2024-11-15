@@ -1,14 +1,14 @@
 resource "aws_eip" "eip1" {
   domain = "vpc"
 
-   tags = {
+  tags = {
     Name = "${var.project_name}-${var.environment}-eip1"
   }
 }
 resource "aws_eip" "eip2" {
   domain = "vpc"
 
-   tags = {
+  tags = {
     Name = "${var.project_name}-${var.environment}-eip2"
   }
 }

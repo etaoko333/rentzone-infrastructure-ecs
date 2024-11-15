@@ -2,7 +2,7 @@
 variable "region" {
   description = "Region to create resources"
   type        = string
-  default     = "us-west-1"  # Default to your specified region
+  default     = "us-west-1" # Default to your specified region
 }
 
 variable "project_name" {
@@ -51,3 +51,74 @@ variable "private_data_subnet_az2_cidr" {
   type        = string
 }
 
+variable "ssh_location" {
+  description = "The IP address or CIDR block allowed for SSH access"
+  type        = string
+  default     = "84.67.169.53/32" # You can replace this with the value you want to pass dynamically
+}
+
+# RDS variables
+variable "db_master_username" {
+  description = "Database username"
+  type        = string
+}
+
+variable "db_master_password" {
+  description = "Database password"
+  type        = string
+}
+
+# acm variables
+variable "domain_name" {
+  description = "domain name"
+  type        = string
+}
+
+variable "alternative_names" {
+  description = "sub domain name"
+  type        = string
+}
+
+# S3 variables
+variable "env_file_bucket_name" {
+  description = "s3 bucket name"
+  type        = string
+}
+
+variable "env_file_name" {
+  description = "env file name"
+  type        = string
+}
+
+# ECS variables
+variable "architecture" {
+  description = "ecs cpu architecture"
+  type        = string
+}
+
+variable "container_image" {
+  description = "container image uri"
+  type        = string
+}
+
+# Route53 variables
+variable "record_name" {
+  description = "sub domain name"
+  type        = string
+}
+
+# ECS specific variables
+variable "ecr_account_id" {
+  description = "The AWS ECR account ID"
+  type        = string
+}
+
+variable "repository_name" {
+  description = "The name of the ECR repository"
+  type        = string
+}
+
+variable "image_tag" {
+  description = "The tag for the container image"
+  type        = string
+}
